@@ -1,5 +1,5 @@
-Hack Plate
-==========
+HackPlate
+=========
 
 An empty NodeJS project ready for hacking
 

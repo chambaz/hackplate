@@ -4,7 +4,7 @@
   "description": "An empty NodeJS project ready for hacking",
   "main": "index.js",
   "scripts": {
-
+	  "start": "node index.js"
   },
   "author": "Adam Chambers, @chambaz",
   "license": "MIT",
@@ -14,5 +14,9 @@
     "eslint-plugin-import": "^1.9.2",
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2"
+  },
+  "dependencies": {
+    "patterns": "^1.0.2",
+    "st": "^1.2.0"
   }
 }

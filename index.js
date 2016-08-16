@@ -1,6 +1,10 @@
 // require http, routing modules
 const http = require('http');
 const routes = require('patterns')();
+const st = require('st');
+
+// serve static files in current working directory
+const staticDir = st({ path: `${__dirname}/dist`, url: '/dist' });
 
 // index route
 routes.add('GET /', (req, res) => {
@@ -12,9 +16,13 @@ routes.add('GET /', (req, res) => {
 const server = http.createServer((req, res) => {
 	// match routes
 	const match = routes.match(`${req.method} ${req.url}`);
+	const staticMount = staticDir(req, res);
 
+	// static file
+	if (staticMount) {
+		return;
 	// if match found call function
-	if (match) {
+	} else if (match) {
 		const fn = match.value;
 		req.params = match.params;
 		fn(req, res);
